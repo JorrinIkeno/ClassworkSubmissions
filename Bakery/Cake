@@ -1,0 +1,79 @@
+/**
+ * This class defines the qualities and behaviors
+ * of a cake object. It should have a flavor
+ * and layers.
+ * @author Jorrin Ikeno
+ */
+public class Cake
+{
+	//properties of cakes
+	
+	//a property that stores the cake's flavor
+	String flavor = new String("Yellow");
+	
+	//declare an int for the number of layers in the cake
+	int layers;
+	
+	public Cake(String str, int n)
+	{
+		//Assign a flavor to this cake as it is created.
+		this.flavor = str;
+		
+		//Assign the number of layers the cake has.
+		this.layers = n;
+		
+	}
+	
+	public Cake(String flavor)
+	{
+		//Set layers equal to 1.
+		this.layers = 1;
+	}
+	
+	/**
+	 * This method returns the flavor of the cake.
+	 */
+	public	String getFlavor()
+	{
+		//Print statement to tell us what the flavor is.
+		return flavor;
+	}
+	
+	/**
+	 * This method returns the amount of layers in the cake.
+	 */
+	public int getLayers()
+	{
+		//Print statement to tell us how many layers there are.
+		return layers;
+	}
+	
+	/**
+	 * This method changes the flavor of the cake to the input.
+	 * @param flavor
+	 */
+	public void setFlavor(String str)
+	{
+		//Changes the flavor of the cake
+		String flavor = str;
+	}
+	
+	/**
+	 * This method tells us if the cake is tasty.
+	 */
+	public static void tellIfTasty()
+	{
+		//Print statement to tell us it is tasty.
+		System.out.println("The cake is yummy.");
+	}
+	
+	/**
+	 * This method adds one layer to the cake.
+	 */
+	public void incrementLayer()
+	{
+		//Print statement to add one layer.
+		layers++;
+	}
+	
+}
