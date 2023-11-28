@@ -1,0 +1,44 @@
+/**
+ * This class is to practice using a loop to
+ * produce an ouput that uses an arithmetic sequence
+ * @author Jorrin Ikeno
+ */
+public class SimpleLoop
+{
+
+	public static void main(String[] args)
+	{
+		
+		//method to 
+		countSomeNums();
+		
+		//method that returns a value of 4
+		int num = returnFour();
+		System.out.print(num);	
+		
+		System.out.print( returnFour() );
+		
+	}
+
+	private static int returnFour()
+	{
+		return 4;
+		
+	}
+
+	/**
+	 * This method takes in no parameters and prints nothing.
+	 * It simply prints out the arithmetic sequence using a for loop.
+	 */
+	private static void countSomeNums()
+	{
+		//starting the for loop
+		for (int i = -4; i < 87; i += 18)
+		{
+			//prints 
+			System.out.println(i);
+		}
+		
+	}
+
+}
