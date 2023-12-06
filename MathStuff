@@ -1,0 +1,76 @@
+import java.util.Random;
+
+/**
+ * This method will use a for loop to multiply any number without an *.
+ */
+public class MathStuff
+{
+
+	public static void main(String[] args)
+	{
+	
+		//Declare two numbers to test Math methods on
+		
+		int myInt = -4;
+		double myDub = -16.0;
+		
+		//Test the sqrt method. It should find the square root.
+		double mySqrt = Math.sqrt(myDub);
+		
+		//Print the square root
+		System.out.println(mySqrt);
+		
+		//Test the abs method. It should produce absolute values.
+		double myAbsDub = Math.abs(myDub);
+		
+		//Print the absolute value.
+		System.out.println(myAbsDub);
+		
+		double myAbsInt = Math.abs(myInt);
+		System.out.println(myAbsInt);
+		
+		//Test the pow method. It raises the first number
+		//to the power of the second number.
+		//It only returns doubles
+		int base = 2;
+		int exp = 5;
+		double prod = Math.pow(base, exp);
+		
+		//Print the product.
+		System.out.println(prod);
+		
+		//Test the random method.
+		//It should produce a random number from 1 to 10.
+		double randomNum = Math.random(1, 10);
+		
+		
+		
+		//Call a method that passes two int parameters.
+		multTwoNums(5, 4);
+		
+	}
+
+	/**
+	 * This method will multiply the two ints without
+	 * an *, but with a for loop.
+	 * @param a is currently equal to 5.
+	 * @param b is currently equal to 4.
+	 */
+	private static void multTwoNums(int a, int b)
+	{
+		//set int adder equal to a
+		int adder = a;
+		
+		//add a to itself b times
+		for(int i = 1; i < b; i++)
+		{
+			//add a to itself
+			a *= adder;
+			
+			//print the product
+			System.out.println(a);
+		}
+		
+	}
+
+}
