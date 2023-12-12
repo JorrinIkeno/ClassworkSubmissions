@@ -1,7 +1,7 @@
-import java.util.Random;
 
 /**
- * This method will use a for loop to multiply any number without an *.
+ * This class will use a for loop to multiply any number without an *.
+ * @author Jorrin Ikeno
  */
 public class MathStuff
 {
@@ -14,11 +14,15 @@ public class MathStuff
 		int myInt = -4;
 		double myDub = -16.0;
 		
+		
+		
 		//Test the sqrt method. It should find the square root.
 		double mySqrt = Math.sqrt(myDub);
 		
 		//Print the square root
 		System.out.println(mySqrt);
+		
+		
 		
 		//Test the abs method. It should produce absolute values.
 		double myAbsDub = Math.abs(myDub);
@@ -28,6 +32,8 @@ public class MathStuff
 		
 		double myAbsInt = Math.abs(myInt);
 		System.out.println(myAbsInt);
+		
+		
 		
 		//Test the pow method. It raises the first number
 		//to the power of the second number.
@@ -39,10 +45,160 @@ public class MathStuff
 		//Print the product.
 		System.out.println(prod);
 		
-		//Test the random method.
-		//It should produce a random number from 1 to 10.
-		double randomNum = Math.random(1, 10);
 		
+		
+		//TASK 1: Instantiate an Integer object.
+		Integer myInteger = 4;
+		
+		//Print out the max and min values an Integer can store.
+		System.out.println(Integer.MIN_VALUE);
+		System.out.println(Integer.MAX_VALUE);
+		
+		
+		
+		//TASK 2: Instantiate a Double object.
+		Double myDouble = 6.6;
+		
+		//Print out the max and min values a Double object can store.
+		System.out.println(Double.MAX_VALUE);
+		System.out.println(Double.MIN_VALUE);
+		
+		
+		
+		//TASK 3: Declare an int and print it as a double.
+		//This is called "casting".
+		int a = 5;
+		
+		System.out.println(  (double) a  );
+		
+		//TASK 4: Declare a double and print it as an int.
+		//This is another example of casting.
+		double b = 6.2;
+		
+		System.out.println(  (int) b  );
+		
+		
+		//-----------------------------------------------------------------------------
+
+
+		//HW TASK 1: Create a method that generates a random number
+		//from 1-10 inclusive.
+		
+		
+		
+		
+		//HW TASK 2: Declare two ints called intA and intB that
+		//have values of -36 and +12 respectively.
+		int intA = -36;
+		
+		int intB = 12;
+
+		
+		
+		//HW TASK 3: Declare two doubles called dubA and dubB that
+		//have values of -100.0 and 0.64 respectively.
+		double dubA = -100.0;
+		
+		double dubB = 0.64;
+
+		
+		
+		//HW TASK 4: Instantiate two Integer objects called integerA
+		//and integerB with the same values as the ints.
+		Integer integerA = intA;
+		
+		Integer integerB = intB;
+
+		
+		
+		//HW TASK 5: Instantiate two Double objects called doubleA
+		//and doubleB with the same values as the doubles.
+		Double doubleA = dubA;
+		
+		Double doubleB = dubB;
+		
+		
+		
+		//HW TASK 6: Use your method to print out one int raised to
+		//the power of the other int.
+		multTwoNums(intA, intB);
+		
+		
+		
+		//HW TASK 7: Use your method to print out one Integer raised
+		//to the power of the other Integer.
+		multTwoNums(integerA, integerB);
+		
+		
+		
+		//HW TASK 8: Use your method to print out one double raised to
+		//the power of the other double.
+		multTwoNums( (int) dubA, (int) dubB );
+		
+		
+		
+		//HW TASK 9: Use your method to print out one Double raised to
+		//the power of the other Double.
+		
+		//multTwoNums( (int) doubleA, (int) doubleB );
+			//Cannot cast from Double to int.
+		
+		
+		
+		//HW TASK 10: Print out the absolute value of intA, integerA,
+		//dubA, and doubleB.
+		double mySecondAbsInt = Math.abs(intA);
+		System.out.println(mySecondAbsInt);
+		
+		double myAbsInteger = Math.abs(integerA);
+		System.out.println(myAbsInteger);
+		
+		double mySecondAbsDub = Math.abs(dubA);
+		System.out.println(mySecondAbsDub);
+		
+		double myAbsDouble = Math.abs(doubleB);
+		System.out.println(myAbsDouble); 
+		
+		
+		
+		//HW TASK 11: Print out the square root of dubB and doubleB.
+		double hwSqrt = Math.sqrt(dubB);
+		System.out.println(hwSqrt);
+		
+		double hwSqrtTwo = Math.sqrt(doubleB);
+		System.out.println(hwSqrtTwo);
+		
+		
+		
+		//HW TASK 12: Print out the square root of the absolute value
+		//of intA and integerA.
+		double absIntA = Math.abs(intA);
+		double sqrtIntA = Math.sqrt(absIntA);
+		System.out.println(sqrtIntA);
+		
+		double absIntegerA = Math.abs(integerA);
+		double sqrtIntegerA = Math.sqrt(absIntegerA);
+		System.out.println(sqrtIntegerA);
+		
+		
+		
+		//HW TASK 13: Print out one double raised to the power of
+		//the other double.
+		
+		
+		
+		
+		//HW TASK 14: Print out one int raised to the power of one
+		//of your doubles.
+		
+		
+		
+		
+		//HW TASK 15: Print out one Double raised to the power of
+		//one of your Integers.
+		
+		
+		//-----------------------------------------------------------------------------
 		
 		
 		//Call a method that passes two int parameters.
@@ -56,21 +212,45 @@ public class MathStuff
 	 * @param a is currently equal to 5.
 	 * @param b is currently equal to 4.
 	 */
-	private static void multTwoNums(int a, int b)
+	public static void multTwoNums(int a, int b)
 	{
 		//set int adder equal to a
 		int adder = a;
 		
+		
 		//add a to itself b times
 		for(int i = 1; i < b; i++)
 		{
+			//print the product
+			System.out.println(a);
+			
 			//add a to itself
 			a *= adder;
 			
-			//print the product
-			System.out.println(a);
 		}
+		System.out.println(a);
+	
+	
+		int q = 7;
+		int r = 2;
 		
+		int integerSum = addTwoIntegers(q, r);
+		System.out.println( addTwoIntegers(q, r) );
+	
 	}
+
+	/**
+	 * This methods takes in two Integer objects and returns their sum
+	 * as an int. Even though the formal parameters are Integers,
+	 * it will turn passed ints into Integers automatically.
+	 * This process is called "autoboxing".
+	 * @param a the first additive
+	 * @param b the second additive
+	 * @return the sum of a and b as an int
+	 */
+	public static int addTwoIntegers(Integer a, Integer b)
+		{
+			return a + b;
+		}
 
 }
