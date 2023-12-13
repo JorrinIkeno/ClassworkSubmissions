@@ -83,7 +83,9 @@ public class MathStuff
 
 		//HW TASK 1: Create a method that generates a random number
 		//from 1-10 inclusive.
+		int x = 1 + (int) (Math.random() * 10);
 		
+		System.out.println("My random number is " + x + ".");
 		
 		
 		
@@ -184,18 +186,20 @@ public class MathStuff
 		
 		//HW TASK 13: Print out one double raised to the power of
 		//the other double.
-		
+		double myPow = Math.pow(dubA, dubB);
+		System.out.println(myPow);
 		
 		
 		
 		//HW TASK 14: Print out one int raised to the power of one
 		//of your doubles.
-		
+		double myPowTwo = Math.pow(intA, dubB);
 		
 		
 		
 		//HW TASK 15: Print out one Double raised to the power of
 		//one of your Integers.
+		double myPowThree = Math.pow(doubleA, integerA);
 		
 		
 		//-----------------------------------------------------------------------------
