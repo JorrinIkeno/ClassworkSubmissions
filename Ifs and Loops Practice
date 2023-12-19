@@ -1,0 +1,131 @@
+/**
+ * This class is used to practice if statements and loops.
+ * @author Jorrin Ikeno
+ */
+
+import java.util.Scanner;
+
+public class ifsAndLoops
+{
+
+	public static void main(String[] args)
+	{
+		//TASK 1: Scan in two ints and store them as integers called 'x' and 'y'.
+		
+		Scanner storeInts = new Scanner(System.in);
+		
+		Integer x = storeInts.nextInt();
+		
+		Integer y = storeInts.nextInt();
+		
+		storeInts.close();
+		
+		//TASK 2: Call a method named "printEvenOrOdd." Pass it x and y.
+		
+		printEvenOrOdd(x, y);
+		
+		
+		//TASK 3: Call a method named "printExpTable" that will be passed x and y.
+		printExpTable(x, y);
+		
+		//TASK 4: Call a method named "getFact" that will return the factorial of a number.
+		//getFact(x);
+		
+		System.out.println("The value of the factorial is " + getFact(x));
+		
+	}
+	
+	/**
+	 * TASK 2:
+	 * This method should print whether or not the numbers are both odd,
+	 * both even, or if they are different.
+	 * 
+	 * @param x
+	 * @param y
+	 */
+	public static void printEvenOrOdd(Integer x, Integer y)
+	{
+		//check if the number is odd, even, or different.
+		if(x % 2 == 0)
+		{
+			if(y % 2 == 0)
+			{
+			System.out.println(x + " and " + y + " are both even.");
+			}
+			
+			else if(y % 2 == 1)
+			{
+				System.out.println(x + " is even and " + y + " is odd.");
+			}
+		}
+		
+		else if (x % 2 == 1)
+		{
+			if(y % 2 == 1)
+			{
+				System.out.println(x + " and " + y + " are both odd.");
+			}
+		
+			else if(y % 2 == 0)
+			{
+				System.out.println(x + " is odd and " + y + " is even.");
+			}
+		}
+		
+	}
+	
+	/**
+	 * TASK 3:
+	 * This method should print the exponent table of x to the y.
+	 * If either number is negative, it will print an error message instead.
+	 * @param x
+	 * @param y
+	 */
+	public static void printExpTable(Integer x, Integer y)
+	{
+		if(x < 0)
+		{
+			System.out.println("Sorry. I don't know how to do that yet.");
+		}
+		
+		else
+		{
+			for(int i = 0; i <= y; i++)
+			{
+				System.out.println( x + " to the " + i + " is " + Math.pow(x, i) );
+			}	
+		}
+	}
+	
+	/**
+	 * TASK 4:
+	 * This method should check if the number is negative, which means it should
+	 * print an error message and return -1.
+	 * 
+	 * In the main method, add a print statement that will print "The
+	 * value of the factorial is (the returned value)."
+	 * @return
+	 */
+	public static int getFact(Integer x)
+	{
+		int fact = 1;
+		
+		int answer = -1;
+		
+		if(x < 0)
+		{
+		System.out.println("Error. The number is negative. Please try again.");
+		}
+		
+		else
+		{
+			for(int i = x; i > 1; i--)
+			{
+				fact = fact * i;
+			}
+			answer = fact;
+		}
+		return answer;
+	}
+	
+}
