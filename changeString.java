@@ -117,7 +117,9 @@ public class DiceRoller
 		System.out.println("");
 		
 		//Call rollDice to use a and b in the next method.
-		rollDice(a, b);
+		int r = rollDice(a, b);
+		
+		System.out.println(r);
 		
 	}
 	/**
@@ -125,7 +127,7 @@ public class DiceRoller
 	 * @param a
 	 * @param b
 	 */
-	public static void rollDice(String amount, String faces)
+	public static int rollDice(String amount, String faces)
 	{	
 		System.out.println("Your dice have landed on the following numbers:");
 			
@@ -141,12 +143,16 @@ public class DiceRoller
 			
 			//Print the random numbers.
 			System.out.println(x);
+			
 		}
 		
 		System.out.println("");
 			
 		//Print the sum of the random numbers.
 		System.out.println("Rolling " + amount + " " + faces + "-sided dice results in a total of " + sum + ".");
+		
+		//Return the sum.
+		return sum;
 	}
 	
 	/**
