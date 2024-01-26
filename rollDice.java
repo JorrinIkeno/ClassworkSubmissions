@@ -51,9 +51,9 @@ public class DiceRoller
 		//Create a method with two formal parameters: a String object and a char.
 		countChars(myString, myLetter);
 		
-//		System.out.println(countChars(myString, myLetter));
+		System.out.println(countChars(myString, myLetter));
 		
-//		System.out.println("");
+		System.out.println("");
 		
 		//Create a method that passes a String and returns a different String
 		//that is the same as the passed String without any spaces.
@@ -65,7 +65,7 @@ public class DiceRoller
 		{
 			int x = 1 + (int) (Math.random() * 17);
 			
-//			System.out.println(x);
+			System.out.println(x);
 		}
 		
 	}
@@ -112,20 +112,22 @@ public class DiceRoller
 		String b = myDice.substring(d + 1);
 				
 		//Print the output.
-//		System.out.println("The first number is " + a + " and the second number is " + b + ".");
+		System.out.println("The first number is " + a + " and the second number is " + b + ".");
 		
-//		System.out.println("");
+		System.out.println("");
 		
 		//Call rollDice to use a and b in the next method.
-		rollDice(a, b);
+		int r = rollDice(a, b);
+		
+		System.out.println(r);
 		
 	}
 	/**
-	 * This method should print out the sum of the random numbers rolled on the dice.	
+	 * 	This method should print out the sum of the random numbers rolled on the dice.
 	 * @param a
 	 * @param b
 	 */
-	public static void rollDice(String amount, String faces)
+	public static int rollDice(String amount, String faces)
 	{	
 		System.out.println("Your dice have landed on the following numbers:");
 			
@@ -141,10 +143,14 @@ public class DiceRoller
 			
 			//Print the random numbers.
 			System.out.println(x);
+			
 		}
 		
 		System.out.println("");
 			
 		//Print the sum of the random numbers.
 		System.out.println("Rolling " + amount + " " + faces + "-sided dice results in a total of " + sum + ".");
+		
+		//Return the sum.
+		return sum;
 	}
