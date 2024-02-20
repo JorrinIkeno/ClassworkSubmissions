@@ -1,0 +1,61 @@
+* Create five attributes,
+ * a constructor,
+ * and two methods.
+ * 
+ * @author Jorrin Ikeno
+ */
+public class Student
+{
+	//Three attributes to store grades.
+	private double scienceGrade;
+	private double mathGrade;
+	private double theologyGrade;
+	
+	//One attribute to store the grade.
+	public int gradeLevel;
+	
+	//One attribute to store the name.
+	public String name;
+	
+	/**
+	 * This constructor allows us to make student objects.
+	 * We pass it numbers to be the initial values.
+	 * 
+	 * @param a scienceGrade
+	 * @param b mathGrade
+	 * @param c theologyGrade
+	 * @param g gradeLevel
+	 * @param n name
+	 */
+	public Student(double a, double b, double c, int g, String n)
+	{
+		scienceGrade = a;
+		mathGrade = b;
+		theologyGrade = c;
+		gradeLevel = g;
+		name = n;
+	}
+	
+	//Functionalities: The main one is to get the average of all grade values.
+	
+	/**
+	 * This method is used to return the average GPA of the three grades.
+	 * @return A for the average GPA.
+	 */
+	private double getGPA()
+	{
+		double A = (scienceGrade + mathGrade + theologyGrade) / 3;
+		
+		return A;
+	}
+	
+	/**
+	 * This method should print out the student's introduction.
+	 */
+	public String introduceSelf()
+	{
+		return ("I am a student in grade " + gradeLevel + 
+				". My name is " + name + ". My average GPA is " + getGPA() + ".");
+	}
+	
+}
