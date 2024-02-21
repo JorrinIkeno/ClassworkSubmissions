@@ -1,4 +1,7 @@
-* Create five attributes,
+/**
+ * This class is used to store the grades of a student.
+ * 
+ * Create five attributes,
  * a constructor,
  * and two methods.
  * 
@@ -52,7 +55,7 @@ public class Student
 	/**
 	 * This method should print out the student's introduction.
 	 */
-	public String introduceSelf()
+	public void introduceSelf()
 	{
 		System.out.println("I am a student in grade " + gradeLevel + 
 				". My name is " + name + ". My average GPA is " + getGPA() + ".");
