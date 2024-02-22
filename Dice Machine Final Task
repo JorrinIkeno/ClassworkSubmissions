@@ -36,8 +36,14 @@ public class DiceMachine
 		System.out.print("Rolling ");
 		
 		//Task 5: Loop back to task 2.
-		for(int i = 0; i <= countChars(myDice, '+') + 1; i++)
+		for(int i = 0; i <= countChars(myDice, '+') + 1;)
 		{
+		
+			//If statement to account for a single set or the final set of dice.
+			if(countChars(myDice, '+') == 0)
+			{
+				break;
+			}
 			
 			//Task 2: Find amount and faces.
 			total += countNums(myDice, total);
@@ -54,34 +60,30 @@ public class DiceMachine
 			
 		}
 		
-		//If statement to account for the final set of dice.
-		if(countChars(myDice, '+') == 0)
+		//If statement to account for a modifier.
+		if(countChars(myDice, 'd') == 0)
 		{
-			//Nested if statement to account for a modifier.
-			if(countChars(myDice, 'd') == 0)
-			{
-				//Declare a String equal to the modifier.
-				String modifier = myDice;
+			//Declare a String equal to the modifier.
+			String modifier = myDice;
 				
-				//Add the value of the modifier to the total.
-				total += Integer.valueOf(modifier);
+			//Add the value of the modifier to the total.
+			total += Integer.valueOf(modifier);
 				
-				//Print the total.
-				System.out.println("and adding a modifier of " + modifier 
-						+ " will result in a sum of " + total);
-			}
-			
-			//Else statement to roll the final set of dice.
-			else
-			{
-				//Task 2: Find amount and faces.
-				total += countNums(myDice, total);
-		
-				/* Task 3: Roll the dice.
-				Method rollDice is called in the countNums method. */
-			}
+			//Print the total.
+			System.out.println("and adding a modifier of " + modifier 
+					+ " will result in a sum of " + total);
 		}
 			
+		//Else statement to roll a single set or the final set of dice.
+		else
+		{
+			//Task 2: Find amount and faces.
+			total += countNums(myDice, total);
+		
+			/* Task 3: Roll the dice.
+			Method rollDice is called in the countNums method. */
+		}
+		
 	}	
 	
 	/**
@@ -158,8 +160,9 @@ public class DiceMachine
 		//If statement to account for the last set of dice.
 		if(countChars(myDice, '+') == 0)
 		{
-			//Locate the number of faces on the last dice set.
+			//Locate the number of faces of the last dice set.
 			faces = myDice.substring(d + 1);
+			
 		}
 		
 		//Else statement for any other set of dice.
@@ -199,8 +202,23 @@ public class DiceMachine
 		//
 		if(countChars(myDice, '+') == 0)
 		{
-			System.out.println("and " + amount + " " + faces + "-sided dice result in a sum of "
-		+ total);
+			total += sum;
+			
+			//Nested if statement to account for a single set of dice.
+			if(countChars(myDice, 'd') == 1)
+			{
+				System.out.println("a " + amount + " " + faces + "-sided dice results in a sum of "
+						+ total + ".");
+				
+				
+			}
+			
+			//Else statement to account for the final set of dice.
+			else
+			{
+				System.out.println("and " + amount + " " + faces + "-sided dice result in a sum of "
+						+ total + ".");
+			}
 		}
 		
 		//
