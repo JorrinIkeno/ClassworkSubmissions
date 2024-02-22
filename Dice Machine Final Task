@@ -1,0 +1,210 @@
+/**
+ * This class has a program that will receive a user's input
+ * in order to roll different amounts of dice. The user can
+ * input any amount of dice, with any amount of faces, and
+ * then add a 'modifier' at the end.
+ * 
+ * @author Jorrin Ikeno
+ */
+
+//Import a Scanner
+import java.util.Scanner;
+
+public class DiceMachine
+{
+
+	public static void main(String[] args)
+	{
+		//Open a Scanner.
+		Scanner myScan = new Scanner(System.in);
+		
+		//Prompt the user to input a String.
+		System.out.println("Input a string for the dice you want to roll. EX: 3d5 + 4d3");
+		
+		//Assign a String the value of the user's input.
+		String myDice = myScan.nextLine();
+		
+		//Close the Scanner.
+		myScan.close();
+		
+		//Declare an int for the total of all rolls.
+		int total = 0;
+		
+		//Task 1: Remove spaces.
+		myDice = changeString(myDice);
+		
+		System.out.print("Rolling ");
+		
+		//Task 5: Loop back to task 2.
+		for(int i = 0; i <= countChars(myDice, '+') + 1; i++)
+		{
+			
+			//Task 2: Find amount and faces.
+			total += countNums(myDice, total);
+			
+			/* Task 3: Roll the dice.
+			Method rollDice is called in the countNums method. */
+			
+			//Task 4: Delete the first set.
+			if ( (countChars(myDice, '+') > 0) )
+			{
+				//Call delSet to use amount and faces in the next method.
+				myDice = delSet(myDice);
+			}
+			
+		}
+		
+		if(countChars(myDice, '+') == 0)
+		{
+			//Task 2: Find amount and faces.
+			total += countNums(myDice, total);
+		
+			/* Task 3: Roll the dice.
+			Method rollDice is called in the countNums method. */
+		}
+			
+	}	
+	
+	/**
+	 * This method should pass a String and return
+	 * a different String that is the same as the passed
+	 * String but without the spaces.
+	 * @param myDice is the String the user inputs.
+	 */
+	public static String changeString(String myDice)
+	{	
+		//Set countChars equal to x in order to set the number of loops equal to it.
+		int x = countChars(myDice, ' ');
+			
+		//Create a loop to repeatedly remove the spaces.			
+		for(int i = 0; i < x; i++)
+		{
+			//Locate ' ' in the String.
+			int space = myDice.indexOf(' ');
+			
+			//Store the characters before the " " in another String.
+			String beforeSpace = myDice.substring(0,space);
+	
+			//Store the characters after " " in another String.
+			String afterSpace = myDice.substring(space + 1);
+			
+			//Concatenate beforeSpace and afterSpace and assign them to one String.
+			myDice = beforeSpace.concat(afterSpace);
+		}
+		return myDice;
+		
+	}
+	
+	/**
+	 * This method should count how many times the char '+' shows up in the String,
+	 * and return that number.
+	 * @param myDice is the String the user inputs.
+	 * @param myChar is the char that the code is looking for.
+	 */
+	public static int countChars(String myDice, char myChar)
+	{	
+		
+		int count = 0;
+		
+		//Create a for loop to read the String.
+		for(int i = 0; i < myDice.length(); i++)
+		{
+			//Check if char at current index equals myChar.
+			if(myDice.charAt(i) == myChar)
+			{
+				count++;
+			}
+			
+		}
+		
+		return count;
+	}
+	
+	/**
+	 * This method should print the first and second numbers
+	 * in a String such as 13d2.
+	 * @param rollDice is the method that will roll the dice.
+	 */
+	public static int countNums(String myDice, int total)
+	{			
+		//Locate character 'd' in the input and store it as an int.
+		int d = myDice.indexOf('d');
+				
+		//Locate the number of dice (to the left of 'd') and store it as a String.
+		String amount = myDice.substring(0,d);
+		
+		//Declare String faces.
+		String faces;
+		
+		//If statement to account for the last set of dice.
+		if(countChars(myDice, '+') == 0)
+		{
+			//Locate the number of faces on the last dice set.
+			faces = myDice.substring(d + 1);
+		}
+		
+		//Else statement for any other set of dice.
+		else
+		{
+			//Locate the number of faces on each die (to the right of 'd') and store it as a String
+			faces = myDice.substring(d+1, myDice.indexOf('+'));
+		}
+		
+		//Call rollDice to use amount and faces in the next method.
+		return rollDice(myDice, amount, faces, total);
+		
+	}
+	
+	/**
+	 * 	This method should print out the sum of the random numbers rolled on the dice.
+	 * @param amount is the number of dice in a set.
+	 * @param faces is the highest possible number a dice can roll.
+	 */
+	public static int rollDice(String myDice, String amount, String faces, int total)
+	{	
+		
+		//Set initial sum to 0.
+		int sum = 0;
+		
+		//For loop that rolls "amount" times.
+		for(int i = 1; i <= Integer.valueOf(amount); i++)
+		{
+			//Make a line that prints a random int between 1 and "faces" inclusive.
+			int x = 1 + (int) (Math.random() * Integer.valueOf(faces));
+			
+			//Add the current random number to the sum total.
+			sum += x;
+			
+		}
+		
+		//
+		if(countChars(myDice, '+') == 0)
+		{
+			System.out.println("and " + amount + " " + faces + "-sided dice result in a sum of "
+		+ total);
+		}
+		
+		//
+		else
+		{
+			System.out.print(amount + " " + faces + "-sided dice, ");
+		}
+		
+		//Return the sum.
+		return sum;
+	
+	}
+
+	/**
+	 * 
+	 * @param myDice is the String that the user inputs.
+	 */
+	public static String delSet(String a)
+	{
+		//Reassign myDice the value of the remaining dice sets.
+		a = a.substring(a.indexOf('+') + 1);
+		
+		return a;
+	}
+	
+}
