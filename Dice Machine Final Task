@@ -19,7 +19,7 @@ public class DiceMachine
 		Scanner myScan = new Scanner(System.in);
 		
 		//Prompt the user to input a String.
-		System.out.println("Input a string for the dice you want to roll. EX: 3d5 + 4d3");
+		System.out.println("Input a string for the dice you want to roll. EX: 3d5 + 4d3 || 3d5 + 4");
 		
 		//Assign a String the value of the user's input.
 		String myDice = myScan.nextLine();
@@ -54,13 +54,32 @@ public class DiceMachine
 			
 		}
 		
+		//If statement to account for the final set of dice.
 		if(countChars(myDice, '+') == 0)
 		{
-			//Task 2: Find amount and faces.
-			total += countNums(myDice, total);
+			//Nested if statement to account for a modifier.
+			if(countChars(myDice, 'd') == 0)
+			{
+				//Declare a String equal to the modifier.
+				String modifier = myDice;
+				
+				//Add the value of the modifier to the total.
+				total += Integer.valueOf(modifier);
+				
+				//Print the total.
+				System.out.println("and adding a modifier of " + modifier 
+						+ " will result in a sum of " + total);
+			}
+			
+			//Else statement to roll the final set of dice.
+			else
+			{
+				//Task 2: Find amount and faces.
+				total += countNums(myDice, total);
 		
-			/* Task 3: Roll the dice.
-			Method rollDice is called in the countNums method. */
+				/* Task 3: Roll the dice.
+				Method rollDice is called in the countNums method. */
+			}
 		}
 			
 	}	
@@ -196,7 +215,7 @@ public class DiceMachine
 	}
 
 	/**
-	 * 
+	 * This method should delete the first set of dice in the String.
 	 * @param myDice is the String that the user inputs.
 	 */
 	public static String delSet(String a)
