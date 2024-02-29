@@ -57,7 +57,7 @@ public class ArrayMethodsIntro
 	 * @param n The element that will be divided by 2.
 	 * @return arr, which is the array with n'th element divided by 2.
 	 */
-	public static int[] divideElementByTwo(int[] arr, int n)
+	public static void divideElementByTwo(int[] arr, int n)
 	{
 		//Divide the n'th element by 2.
 		arr[n] /= 2;
