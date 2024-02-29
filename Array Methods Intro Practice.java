@@ -64,8 +64,6 @@ public class ArrayMethodsIntro
 		
 		/* Check to see if the array works.
 		 * System.out.println(arr[n]); */
-		
-		return arr;
 	}
 
 }
