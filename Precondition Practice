@@ -1,0 +1,38 @@
+/**
+ * This class is used to practice working with preconditions.
+ * 
+ * @author Jorrin Ikeno
+ */
+public class PreconditionPractice
+{
+
+	public static void main(String[] args)
+	{
+		//Create an array.
+		double[] arr = {3.26, 8.84, 9.63, -4.22, 12.80};
+		
+		/* Declare an n'th index.
+		 * 
+		 * Precondition: the index cannot be a value that creates
+		 * an ArrayIndexOutOfBoundsException error. */
+		int index = 2;
+		
+		//Call a method that prints out the number before and after the n'th element.
+		printPrevNextElement(arr, index);
+	}
+
+	/**
+	 * This method should print out the number before and after the n'th element.
+	 * 
+	 * @param arr The passed array.
+	 * @param index The n'th element.
+	 */
+	public static void printPrevNextElement(double[] arr, int index)
+	{
+		//Print out the number before the n'th element.
+		System.out.println("The number before the element at index " + index 
+				+ " is " + arr[index - 1] + " and the number after the element "
+						+ "at index " + index + " is " + arr[index + 1] + ".");
+	}
+
+}
