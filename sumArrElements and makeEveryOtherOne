@@ -1,0 +1,103 @@
+/**
+ * This class is used to practice traversing arrays.
+ * 
+ * @author Jorrin Ikeno
+ */
+public class TraversalPractice
+{
+
+	public static void main(String[] args)
+	{
+		/* Declare a double array.
+		 * 
+		 * Precondition: The array will always be at least length 2. */
+		double[] arr = {1.2, 5.7, 3.5, 9.1};
+		
+		//Call a method to return the sum.
+		sumArrElements(arr);
+		
+		/* Declare an int array.
+		 * 
+		 * Precondition: the array will always be at least length 2. */
+		int[] arr2 = {2, 3, 4, 5, 6, 7, 8};
+		
+		/* Call a method to make every other element '1',
+		starting with the second element. */
+		makeEveryOtherOne(arr2);
+
+	}
+
+	/**
+	 * This method should return the sum of the elements in an array.
+	 * 
+	 * @param arr The passed array.
+	 * @return total, which is the total sum of the elements.
+	 */
+	public static double sumArrElements(double[] arr)
+	{
+		//Declare a double for the sum of the elements.
+		double sum = 0;
+		
+		//Declare a double to store the total for each loop.
+		double total = 0;
+			
+		//Make a for loop to add the elements.
+		for(; sum <= arr.length - 1; sum++)
+		{
+			//Add the elements.
+			total += arr[(int) sum];
+		}
+		
+		/* Check to see if the method works by printing. */
+		System.out.println(total);
+		
+		//Return the sum of the elements.
+		return total;
+	}
+	
+	/**
+	 * This method should change every other element in the array
+	 * to 1, starting with the second element.
+	 * 
+	 * @param arr The passed array.
+	 */
+	public static void makeEveryOtherOne(int[] arr)
+	{
+		/* Declare an int that starts the loop at
+		 * index 1. */
+		int otherOne = 1;
+		
+		
+		//Make a for loop to change every other element.
+		for(; otherOne <= arr.length - 1; otherOne += 2)
+		{
+			//Set the current index equal to 1.
+			arr[otherOne] = 1;	
+		}
+		
+		//Print the new array.
+		
+		//Declare a traverser int.
+		int traverser = 0;
+		
+		//Print the starting brace.
+		System.out.print("{");
+		
+		//For loop to print each element in the array.
+		for(; traverser <= arr.length - 1; traverser++)
+		{
+			//Print the current element.
+			System.out.print(arr[traverser]);
+			
+			//If statement to ensure the current element isn't the final one.
+			if(traverser != arr.length - 1)
+			{
+				System.out.print(", ");
+			}
+		}
+		
+		//Print the ending brace.
+		System.out.println("}");
+	}
+
+}
