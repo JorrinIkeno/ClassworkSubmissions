@@ -11,7 +11,7 @@ public class TraversalPractice
 		/* Declare a double array.
 		 * 
 		 * Precondition: The array will always be at least length 2. */
-		double[] arr = {1.2, 5.7, 3.5, 9.1};
+		double[] arr = {1.2, 5.7, 3.5, 9.6};
 		
 		//Call a method to return the sum.
 		sumArrElements(arr);
@@ -24,7 +24,7 @@ public class TraversalPractice
 		/* Call a method to make every other element '1',
 		starting with the second element. */
 		makeEveryOtherOne(arr2);
-
+		
 	}
 
 	/**
@@ -36,16 +36,16 @@ public class TraversalPractice
 	public static double sumArrElements(double[] arr)
 	{
 		//Declare a double for the sum of the elements.
-		double sum = 0;
+		int i = 0;
 		
 		//Declare a double to store the total for each loop.
 		double total = 0;
 			
 		//Make a for loop to add the elements.
-		for(; sum <= arr.length - 1; sum++)
+		for(; i <= arr.length - 1; i++)
 		{
 			//Add the elements.
-			total += arr[(int) sum];
+			total += arr[i];
 		}
 		
 		/* Check to see if the method works by printing. */
@@ -65,14 +65,14 @@ public class TraversalPractice
 	{
 		/* Declare an int that starts the loop at
 		 * index 1. */
-		int otherOne = 1;
+		int j = 1;
 		
 		
 		//Make a for loop to change every other element.
-		for(; otherOne <= arr.length - 1; otherOne += 2)
+		for(; j <= arr.length - 1; j += 2)
 		{
 			//Set the current index equal to 1.
-			arr[otherOne] = 1;	
+			arr[j] = 1;	
 		}
 		
 		//Print the new array.
