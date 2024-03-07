@@ -35,7 +35,7 @@ public class TraversalPractice
 	 */
 	public static double sumArrElements(double[] arr)
 	{
-		//Declare a double for the sum of the elements.
+		//Declare an int to traverse the loop.
 		int i = 0;
 		
 		//Declare a double to store the total for each loop.
