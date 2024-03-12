@@ -22,7 +22,7 @@ public class TraversalPractice
 		int[] arr2 = {2, 3, 4, 5, 6, 7, 8};
 		
 		/* Call a method to make every other element '1',
-		starting with the second element. */
+		 * starting with the second element. */
 		makeEveryOtherOne(arr2);
 		
 	}
@@ -48,8 +48,8 @@ public class TraversalPractice
 			total += arr[i];
 		}
 		
-		/* Check to see if the method works by printing. */
-		System.out.println(total);
+		/* Check to see if the method works by printing.
+		 * System.out.println(total); */
 		
 		//Return the sum of the elements.
 		return total;
