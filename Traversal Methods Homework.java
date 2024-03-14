@@ -130,9 +130,12 @@ public class TraversalMethodsHomework
 	}
 	
 	/**
+	 * This method is passed an int array and returns
+	 * whether or not the array has any even numbers in it.
 	 * 
 	 * @param arr The passed int array.
-	 * @return boolean hasEven, which shows if there is an even element in the array.
+	 * @return boolean hasEven, which shows if there
+	 * 	   is an even element in the array.
 	 */
 	public static boolean findEvenNums(int[] arr)
 	{
@@ -171,7 +174,7 @@ public class TraversalMethodsHomework
 	 * 
 	 * @param arr The passed int array.
 	 * @return boolean hasAllEven, which shows if all the elements
-	 * 		   in the array are even.
+	 * 	   in the array are even.
 	 */
 	public static boolean findAllEvenNums(int[] arr)
 	{
@@ -226,7 +229,7 @@ public class TraversalMethodsHomework
 	 * 
 	 * @param arr The passed double array.
 	 * @return boolean hasThree, which shows if there are
-	 * 		   three consecutive same elements in the array.
+	 * 	   three consecutive same elements in the array.
 	 */
 	public static boolean checkThreeSame(double[] arr)
 	{
